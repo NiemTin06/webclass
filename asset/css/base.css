@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+html {
+     scroll-behavior: smooth;
+}
+
+:root{
+    --color-bg-1: #004E9B;
+    --color-bg-2: #3790e9;
+    --color-bg-3: #F6F7F6;
+    --color-text-1: #767778;
+}
+
+body{
+    font-family: "Roboto" ,sans-serif;
+    color: var(--color-text-1);
+    position: relative;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+ a{
+    color: var(--color-text-1);
+}
+ a:hover{
+    text-decoration: none;
+    color: var(--color-text-1);
+}
+
+/* Box head */
+
+.box-head{
+    margin-bottom: 35px;
+}
+.box-head .inner-title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.box-head .inner-desc{
+    text-align: center;
+    font-size: 22px;
+    color: var(--color-text-1);
+    margin-bottom: 10px;
+}
+/* End box head */
+
+/* button */
+.button{
+    background-color: var(--color-bg-1);
+    padding: 25px;
+    border-radius: 40px;
+    color: hsl(0, 0%, 100%);
+    font-size: 25px;
+    font-weight: 600;
+    border: 2px solid var(--color-bg-1);
+}
+.button-two{
+    padding: 15px; 
+    font-size: 15px;
+}
+
+.button:hover{
+    background-color: #fff;
+    color: var(--color-bg-1);
+    text-decoration: none;
+}
+
+
+.button-three{
+    font-size: 12px;
+    padding: 10px;
+}
+/* End button */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Ẩn ra ngoài bên phải */
+  width: 300px;
+  height: 100%;
+background-color: var(--color-bg-1);
+  color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+
+/* Khi checkbox được check → sidebar trượt vào */
+#toggle-sidebar:checked ~ .sidebar {
+  right: 0;
+}
+
+
+/* Nút × để đóng sidebar */
+.sidebar .close-btn {
+  font-size: 26px;
+  text-align: right;
+  display: block;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 20px;;
+}
+
+/* Danh sách trong sidebar */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 30px 30px;
+}
+.sidebar ul li:nth-child(1) {
+  margin-top: 20px
+}
+
+.sidebar ul a {
+  color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+.sidebar ul a:hover li{
+  color: var(--color-bg-1);
+  background-color: #fff;
+}
+
+
