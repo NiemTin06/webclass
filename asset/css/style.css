@@ -53,6 +53,42 @@
     height: 100px;
 }
 
+@media (max-width: 992px) {
+    .banner .inner-title{
+        font-size: 25px;
+    }
+    .banner .inner-logo img{
+        height: 100px;
+        width: auto;
+    }
+    .banner .inner-logo .fixicon::before{
+    width: 100px;
+    height: 100px;
+}
+.banner .inner-icons i{
+    font-size: 20px;
+}
+.banner .inner-icons{
+    display: none;
+}
+}
+@media (max-width: 768px) {
+    .banner .inner-logo img{
+        display: none;
+    }
+    .banner .inner-title{
+        font-size: 22px;
+    }
+    .banner .inner-wrap {
+        display: flex;
+        justify-content: center;
+    }
+    .banner .inner-logo .fixicon::before{
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+}
 /* End banner */
 
 /* Header */
@@ -119,6 +155,29 @@
     color: #fff;
     text-decoration: none;
 }
+.header .inner-icons{
+    display: none;
+    font-size: 30px;
+    color: #fff;
+}
+
+
+@media (max-width: 992px) {
+    .header .inner-list > ul > li > a{
+        display: none;
+    }
+    .header .inner-list ul li .dp{
+        display: inline-block;
+    }
+    .header .inner-icons{
+        display: inline-block
+    }
+    .header .inner-list {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 /* End Header */
 
 /* Section-one */
@@ -151,7 +210,7 @@
 .section-one .inner-title{
     color: #fff;
     font-weight: 700;
-    font-size: 70px;
+    font-size: 66px;
     margin-bottom: 40px;
 }
 .section-one .inner-sub-title{
@@ -160,6 +219,19 @@
     font-size: 35px;
     margin-bottom: 100px;
 }
+@media (max-width: 768px) {
+    .section-one .inner-sub-title {
+        font-size: 30px;
+    }
+    .section-one .inner-sub-title {
+        font-size: 30px;
+    }
+    .section-one .inner-button .button {
+        padding: 20px;
+        font-size: 20px;
+    }
+}
+
 /* End Section-one */
 
 /* New */
@@ -255,7 +327,7 @@
 }
 .news .change label{
     width:60px;
-    height:20px;
+    height:30px;
     background:#bbb;
     cursor:pointer;
 }
@@ -265,6 +337,22 @@
 #new4:checked ~ .container .change label:nth-child(4){
     background:#333;
 }
+
+@media (max-width: 992px) {
+    .news .inner-wrap{
+        display: flex;
+
+    }
+    .news .inner-list{
+        width: 1200%;
+    }
+
+    .news .inner-list .box-new .inner-title{
+        font-size:40px;
+    }
+
+}
+
 /* End New */
 
 /* Section-two */
@@ -345,6 +433,17 @@
     text-align: center;
     color: var(--color-text-1);
 }
+
+@media (max-width: 992px) {
+    .section-three .inner-box{
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 540px) {
+    .section-three .inner-box{
+        width: calc(1000% - 20px);
+    }
+}
 /* End Section three */
 
 /* scroll-top */
@@ -405,6 +504,7 @@
 }
 .section-four .inner-wrap{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -429,6 +529,16 @@
     margin-bottom: 50px;
 }
 
+@media (max-width: 992px) {
+    .section-four .inner-wrap .inner-content{
+        width: 100%;
+        order: 2;
+    }
+    .section-four .inner-wrap .inner-image{
+        width: 100%;
+        order: 1;
+    }
+}
 /* End section-four */
 
 
@@ -436,7 +546,6 @@
 .section-five{
     padding : 10px 0px;
     background-color: var(--color-bg-3);
-
 
 }
 
@@ -452,6 +561,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .section-five .inner-content{
@@ -474,6 +584,16 @@
     width: 100%;
     margin-bottom: 50px;
 }
+@media (max-width: 992px) {
+    .section-five .inner-wrap .inner-content{
+        width: 100%;
+        order: 2;
+    }
+    .section-five .inner-wrap .inner-image{
+        width: 100%;
+        order: 1;
+    }
+}
 /* End section-five */
 
 /* section six*/
@@ -490,11 +610,12 @@
 .section-six .inner-wrap{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .section-six .inner-box {
     background-color: #fff;
-    width: 32%;
+    width: calc(32% - 35px);
     border-radius: 20px;
     padding: 30px 30px;
     margin: 20px;
@@ -523,6 +644,18 @@
     height: 100%;
 }
 
+@media (max-width: 992px) {
+    .section-six .inner-wrap .inner-box{
+        width:calc(50% - 40px);
+    }
+    
+}
+@media (max-width: 576px) {
+    .section-six .inner-wrap .inner-box{
+        width:100%
+    }
+    
+}
 /* End section six*/
 
 /* section seven */
@@ -568,12 +701,11 @@
 
 .section-seven .inner-title::after{
     position: absolute;
-    top:10px;
     content: "";
     border-bottom: 2px solid black ;
-    width: 350px;
+    width: 60%;
     top: 122%;
-    left: 34%;
+    left: 19%;
 }
 
 
@@ -593,9 +725,9 @@
 }
 
 
-#h1:checked ~ .container .change label:nth-child(1),
-#h2:checked ~ .container .change label:nth-child(2),
-#h3:checked ~ .container .change label:nth-child(3){
+#h1:checked ~  .change label:nth-child(1),
+#h2:checked ~  .change label:nth-child(2),
+#h3:checked ~  .change label:nth-child(3){
     background:#333;
 }
 
@@ -607,7 +739,7 @@
 }
 .section-seven .change label{
     width:60px;
-    height:20px;
+    height:30px;
     background:#bbb;
     cursor:pointer;
 }
@@ -616,10 +748,12 @@
 /* Section-eight */
 .section-eight {
     background-color: #DCE8EB;
+    padding:  60px 20px;
 }
 
 .section-eight .inner-wrap{
-    padding: 40px 50px;
+    max-width: 960px;
+    margin:  0 auto;
 }
 .section-eight .inner-title{
     font-weight: 700;
@@ -628,8 +762,22 @@
     font-size: 32px;
 }
 .section-eight .inner-video{
-    text-align: center;
-    background-color: #2a2d31;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section-eight .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 /* End section-eight */
 
@@ -637,6 +785,7 @@
 
 .footer{
     background-color: #1C2331;
+    overflow: hidden;
 }
 .footer .container  .inner-wrap{
     position: relative;
@@ -704,7 +853,8 @@
 
 .footer .container > .inner-wrap::after{
     content: "";
-    width: 800px;
+    width: 70vh;
+
     height: 20px;
     border-bottom: 2px solid rgba(128, 128, 128, 0.41);
     background-color: transparent;

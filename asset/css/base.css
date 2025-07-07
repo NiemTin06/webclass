@@ -82,7 +82,7 @@ ul{
 }
 /* End button */
 
-.sidebar {
+.sidebar, .sidebar-header {
   position: fixed;
   top: 0;
   right: -300px; /* Ẩn ra ngoài bên phải */
@@ -96,11 +96,15 @@ background-color: var(--color-bg-1);
 }
 
 
+
 /* Khi checkbox được check → sidebar trượt vào */
 #toggle-sidebar:checked ~ .sidebar {
   right: 0;
 }
 
+#toggle-sidebar-header:checked ~ .sidebar-header {
+  right: 0;
+}
 
 /* Nút × để đóng sidebar */
 .sidebar .close-btn {
@@ -151,3 +155,4 @@ background-color: var(--color-bg-1);
 }
 
 
+/* ////////////////////// */
