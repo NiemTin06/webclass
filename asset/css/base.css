@@ -121,8 +121,14 @@ background-color: var(--color-bg-1);
   margin: 0;
 }
 
-.sidebar ul li {
-  padding: 30px 30px;
+.sidebar ul li a{
+  padding: 10px 30px;
+}
+.sidebar ul li a {
+  display: inline-block;
+}
+.sidebar ul li  {
+  display: block;
 }
 .sidebar ul li:nth-child(1) {
   margin-top: 20px
@@ -133,9 +139,15 @@ background-color: var(--color-bg-1);
     font-size: 20px;
     font-weight: 600;
 }
-.sidebar ul a:hover li{
+.sidebar ul li:hover a{
   color: var(--color-bg-1);
   background-color: #fff;
+  text-decoration: none;
+}
+.sidebar ul li:hover {
+  color: var(--color-bg-1);
+  background-color: #fff;
+  text-decoration: none;
 }
 
 
