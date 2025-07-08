@@ -130,6 +130,7 @@ background-color: var(--color-bg-1);
 }
 .sidebar ul li a {
   display: inline-block;
+  width: 100%;
 }
 .sidebar ul li  {
   display: block;
