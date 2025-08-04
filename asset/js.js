@@ -33,7 +33,42 @@ overlay.addEventListener("click", () => {
 });
 
 
+// button
+var btn1  = document.querySelectorAll(".section-four .button-65");
 
+btn1.forEach((x)=> {
+  x.addEventListener("click", ()=>{
+    window.open("https://cit.ctu.edu.vn/mmt/mmt.html", "_blank");
+  }); 
+});
+
+
+  const sections = document.querySelectorAll('.section-four');
+
+  //section 4
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // Chỉ cần hiện 1 lần
+    }
+  });
+}, {
+  threshold: 0.1 // phần tử xuất hiện 10% trở lên thì hiện ra
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+
+let image = document.querySelectorAll(".section-four .inner-image img");
+image.forEach((el) => {
+    el.addEventListener("click", ()=>{
+      el.classList.add('full');
+    });
+});
+  //section 4
                  
   const wrap = document.querySelector('.news .inner-wrap');
   const items = document.querySelectorAll('.box-new');
@@ -63,7 +98,7 @@ overlay.addEventListener("click", () => {
   };
 
   nextBtn.addEventListener('click', () => {
-    if (index < items.length - visibleCount*2) {
+    if (index < items.length/visibleCount - 1) {
       index++;
       updateSlide();
     }
@@ -79,11 +114,34 @@ overlay.addEventListener("click", () => {
   window.addEventListener('resize', () => {
     wrap.style.transform = `translateX(-${0 * itemWidth * visibleCount}px)`;
   });
+ 
 
   setInterval(()=>{
-    if (index < items.length - visibleCount*2){
+    if (index < items.length/visibleCount - 1){
         index++;
     }
     else index = 0;
     updateSlide();
-  },8000);
+  },20000);
+
+
+// section 7
+
+let circle = document.querySelector(".section-seven .inner-wrap");
+
+let angle = 0;
+
+function rotate(direction){
+  angle += direction * 90;
+  circle.style.transform = `rotate(${angle}deg)`;
+}
+
+let prev2 =document.querySelector("#prev2");
+let next2 = document.querySelector("#next2");
+
+next2.addEventListener("click" ,()=>{
+    rotate(1);
+});
+prev2.addEventListener("click" ,()=>{
+    rotate(-1);
+});
