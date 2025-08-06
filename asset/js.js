@@ -1,16 +1,4 @@
-const slides = document.querySelectorAll(".slide");
-let indexx = 0;
-
-
-let showSlide = () => {
-    slides[indexx].classList.remove("active");
-    indexx = (indexx + 1 ) % 3;
-    slides[indexx].classList.add("active");
-}
-
-setInterval(showSlide, 5000);
-
-
+     
 const toggleBtn = document.querySelectorAll(".menu-btn");
 const closeBtn = document.querySelector(".close-btn");
 const sidebar = document.querySelector(".sidebar");
@@ -45,14 +33,27 @@ btn1.forEach((x)=> {
 });
 
 
+
+const slides = document.querySelectorAll(".slide");
+let indexx = 0;
+
+
+let showSlide = () => {
+    slides[indexx].classList.remove("active");
+    indexx = (indexx + 1 ) % 3;
+    slides[indexx].classList.add("active");
+}
+
+setInterval(showSlide, 5000);
+
   const sections = document.querySelectorAll('.section-four');
 
   //section 4
-const observer = new IntersectionObserver((entries, observer) => {
+const observer4 = new IntersectionObserver((entries, observer4) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
-      observer.unobserve(entry.target); // Chỉ cần hiện 1 lần
+      observer4.unobserve(entry.target); // Chỉ cần hiện 1 lần
     }
   });
 }, {
@@ -60,16 +61,42 @@ const observer = new IntersectionObserver((entries, observer) => {
 });
 
 sections.forEach(section => {
-  observer.observe(section);
+  observer4.observe(section);
 });
 
 
-let image = document.querySelectorAll(".section-four .inner-image img");
-image.forEach((el) => {
-    el.addEventListener("click", ()=>{
-      el.classList.add('full');
+// let image = document.querySelectorAll(".section-four .inner-image img");
+// image.forEach((el) => {
+//     el.addEventListener("click", ()=>{
+//       el.classList.add('full');
+//     });
+// });
+
+//section 3
+document.addEventListener("DOMContentLoaded", function () {
+    const boxes = document.querySelectorAll('.inner-box, .inner-box-big');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Nếu muốn chỉ chạy 1 lần thì bỏ quan sát sau khi hiện
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2 // 20% phần tử xuất hiện mới kích hoạt
+    });
+
+    boxes.forEach(box => {
+        observer.observe(box);
     });
 });
+
+//end section 3
+
+
+
   //section 4
                  
   const wrap = document.querySelector('.news .inner-wrap');
@@ -156,3 +183,13 @@ prev2.addEventListener("click" ,()=>{
 });
 
 
+// update 
+document.addEventListener("DOMContentLoaded", () => {
+  const update = document.querySelectorAll(".up");
+  update.forEach(up => {
+    up.addEventListener("click", () => {
+      alert("Đang update");
+    });
+  });
+});
+// end update 

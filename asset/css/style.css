@@ -167,7 +167,6 @@
 /* Header */
 .header{
     background-color: var(--color-bg-2);
-    
     position: sticky;
     top: 0;
     z-index: 100;
@@ -526,7 +525,32 @@
 }
 
 /* End New */
+/* About */
+.about .inner-wrap{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 100px 0;
+    gap : 30px;
+}
 
+.about .inner-wrap .inner-content{
+    grid-column-start: 1 ;
+    grid-column-end: 4 ;
+}
+.about .inner-wrap .inner-content .inner-desc{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.about .inner-wrap .inner-image{
+    grid-column-start: 4 ;
+    grid-column-end: 6 ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.about .inner-wrap .inner-image img{
+    width: 100%;
+    height: 100%;
+}
+/* End About */
 /* Section-two */
 .section-two {
     padding-top: 90px;
@@ -540,7 +564,17 @@
 /* End section-two */
 
 /* Section three */
+ .inner-box,  .inner-box-big {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
 
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 .section-three{
     margin-top: 80px;
     background-image: url(../image/white-background-with-blue-tech-hexagon/19366.jpg);
@@ -718,17 +752,26 @@
     opacity: 1;
     transform: translateX(0);
 }
+.section-four.show{
+    opacity: 1;
+    transform: translateX(0);
+}
 .section-four .inner-image.full{
     width: 100vh;
     height: 100vh;
 }
 .section-four .container{
     margin-top: 20px;
-    overflow-x: hidden;
+   
 }
 
 .section-four {
     font-size: 16px;
+    overflow: hidden;
+}
+
+.section-four .content{
+    overflow-x: hidden;
 }
 .section-four .container-2{
     margin-left: 10%;
@@ -1154,6 +1197,7 @@ transform: translate(-50%, -50%) rotate(90deg) translateX(250px);
     }
 }
 /* End section-eight */
+
 
 /* footer */
 

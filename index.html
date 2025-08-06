@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -21,6 +22,7 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
     </script>
 
+    
     <div class="overlay" id="overlay"></div>
     <!-- banner -->
     <div class="banner" id="top">
@@ -50,13 +52,13 @@
                     <div class="sidebar">
                         <h2 class="close-btn"><i class="fa-solid fa-x"></i></h2>
                         <ul>
-                            <li><a href="# ">Trang chủ</a></li>                            
-                            <li> <a href="#about">Giới thiệu</a> </li>    
+                            <li><a href="index.html">Trang chủ</a></li>                            
+                            <li><a href="about.html">Giới thiệu</a> </li>    
                             <li><a href="#fb">Tin tức</a></li>
-                            <li><a href="#tq">Tổng quan</a></li>
-                            <li><a href="#fb">Hình ảnh</a></li>
-                            <li><a href="#lh">Liên hệ</a></li>
-                            <li><a href="#">BLOG</a></li>
+                            <li><a href="tongquan.html">Tổng quan</a></li>
+                            <li class = "up"><a href="#fb">Hình ảnh</a></li>
+                            <li class = "up"><a href="#lh">Liên hệ</a></li>
+                            <li class = "up"><a href="#">BLOG</a></li>
                             <li><a href="https://www.ctu.edu.vn/ctdt/k50/mota/MT_64_7480202_AnToanThongTin.pdf"
                                 target="_blank">CTĐT & KHHT </a></li>
                             <li><a href="https://300baicode.com/" target="_blank">300 bài code thiếu nhi</a></li>
@@ -78,40 +80,23 @@
         <div class="container">
             <div class="inner-list">
                 <ul>
-                    <li><a href="#top" class ="dp">Trang chủ</a></li>
-                    <li><a href="#about">Giới thiệu</a></li>
-                    <li><a href="#tq">Tổng quan</a></li>
+                    <li><a href="index.html" class ="dp">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="tongquan.html">Tổng quan</a></li>
                     <li><a href="#fb">Hình ảnh</a></li>
                     <li class="more">
                         <a href="#">Xem thêm</a>
                         <ul class="subnav">
-                            <li><a href="#ft">Liên hệ</a></li>
-                            <li><a href="#">BLOG</a></li>
-                            <li><a href="#nw">Tin tức</a></li>
+                            <li class = 'up'><a href="#ft">Liên hệ</a></li>
+                            <li class = "up"><a href="#">BLOG</a></li>
+                            <li class = "up"><a href="#nw">Tin tức</a></li>
                         </ul>
                     </li>
                 </ul>
                 <div class="inner-icons">
                     <h3 class="menu-btn"> <i class="fa-solid fa-bars"></i></h3>
 
-                    <!-- Sidebar bên phải -->
-                    <div class="sidebar sidebar-header">
-                        <h2 class="close-btn"><i class="fa-solid fa-x"></i></h2>
-                        <ul>
-                            <li><a href="#"> Trang chủ</a></li>                            
-                            <li> <a href="#about">Giới thiệu</a> </li>    
-                            <li><a href="#nw">Tin tức</a></li>
-                            <li><a href="#tq">Tổng quan</a></li>
-                            <li><a href="#fb">Hình ảnh</a></li>
-                            <li><a href="#lh">Liên hệ</a></li>
-                            <li><a href="#">BLOG</a></li>
-                            <li><a href="https://www.ctu.edu.vn/ctdt/k50/mota/MT_64_7480202_AnToanThongTin.pdf"
-                                target="_blank">CTĐT & KHHT </a></li>
-                            <li><a href="https://300baicode.com/" target="_blank">300 bài code thiếu nhi</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Side bar -->
+                   
                 </div>
 
             </div>
@@ -519,6 +504,27 @@
         </div>
     </div>
     <!-- End section three -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const boxes = document.querySelectorAll('.inner-box, .inner-box-big');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Nếu muốn chỉ chạy 1 lần thì bỏ quan sát sau khi hiện
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2 // 20% phần tử xuất hiện mới kích hoạt
+    });
+
+    boxes.forEach(box => {
+        observer.observe(box);
+    });
+});
+</script>
 
     <!-- return -->
     <div class="return">
@@ -527,129 +533,7 @@
         </a>
     </div>
     <!-- return -->
-<div class="section-about">
 
-    <!-- Section four -->
-    <div class="section-four" id="tq">
-        <div class="container-2">
-            <div class="box-head">
-                <div class="inner-title">
-                    TỔNG QUAN
-                </div>
-            </div>
-            <div class="inner-wrap">
-                <div class="inner-content">
-                    <h2 class="inner-title">
-                        Khoa Mạng máy tính và Truyền thông <i class="fa-solid fa-graduation-cap"></i>
-                    </h2>
-                    <div class="inner-desc">
-                        <p>
-                            Được thành lập năm 1998 với tên gọi là Bộ môn Hệ thống máy tính và Truyền thông. Năm 2009,
-                            Khoa được đổi tên thành Bộ môn Mạng máy tính và Truyền thông. Ngày 29/09/2022, Bộ môn MMT &
-                            TT chuyển thành Khoa MMT & TT theo nghị quyết của Hội đồng Trường trường ĐHCT.
-                        </p>
-
-                        <p>
-                            Với lực lượng cán bộ có trình độ cao (gồm 01 PGS, 06 Tiến sĩ, 11 Thạc sĩ), phần lớn đều tốt
-                            nghiệp ở các nước có nền giáo dục tiên tiến, Khoa MMT & TT đã và đang đảm nhiệm đào tạo 2
-                            ngành bậc đại học trong lĩnh vực MMT & TT. Giảng viên của Khoa cũng đã hỗ trợ giảng dạy,
-                            thẩm định, đánh giá các chương trình đào tạo, hướng dẫn học viên thạc sĩ, NCS cho các trường
-                            đại học khác trên địa bàn và các tỉnh trong khu vực.
-                        </p>
-                    </div>
-                    <div class="inner-button">
-                        <button  class="button-65" role="button"  target="_blank"> Learn
-                            more </button>
-                        </div>
-                </div>
-                <div class="inner-image">
-                    <img src="asset/image/mmt.jpg" alt="hinh anh">
-                    <img src="asset/image/nckh1.jpg" alt="hinh anh">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End section four -->
-    
-    <!-- Section five -->
-    <div class="section-four">
-        <div class="container-2">
-            <div class="inner-wrap">
-                <div class="inner-content">
-                    <h2 class="inner-title">
-                        Kỹ sư An toàn thông tin
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </h2>
-                    <div class="inner-desc">
-                        <p>
-                            Ngành An toàn thông tin đào tạo kỹ sư có khả năng bảo vệ hệ thống thông tin, dữ liệu số
-                            và
-                            mạng máy tính khỏi các nguy cơ truy cập, phá hoại, hay tấn công trái phép. Sinh viên
-                            được
-                            học cách phòng ngừa, phát hiện và xử lý sự cố an toàn thông tin, triển khai các giải
-                            pháp
-                            bảo mật, kiểm định và giám sát hệ thống trong tổ chức.
-                        </p>
-                        <p>
-                            Chương trình trang bị kiến thức chuyên sâu về mật mã học, an toàn hệ điều hành, bảo mật
-                            cơ
-                            sở dữ liệu, ứng dụng web, Internet, giao dịch điện tử và phòng thủ mạng. Sinh viên còn
-                            rèn
-                            luyện kỹ năng lập trình, phân tích tình huống, sử dụng công cụ chuyên dụng và thực hành
-                            các
-                            kịch bản thực tế để phòng chống, phát hiện và ngăn chặn tấn công mạng hiệu quả.
-                        </p>
-                    </div>
-                   <div class="inner-button">
-                        <button  class="button-65" role="button"  target="_blank"> Learn
-                            more </button>
-                        </div>
-                    </div>
-                    <div class="inner-image">
-                        <img src="asset/image/apu.jpg" alt="hinh anh">
-                        <img src="asset/image/apu2.jpg" alt="hinh anh">
-                    </div>
-            </div>
-        </div>
-    </div>
-    <!--End section five -->
-    
-    <!-- section-four-five -->
-    <div class="section-four">
-        <div class="container-2">
-            <div class="inner-wrap">
-                <div class="inner-content">
-                    <h2 class="inner-title">
-                        Lớp An toàn thông tin Khóa 50 <i class="fa-solid fa-graduation-cap"></i>
-                    </h2>
-                    <div class="inner-desc">
-                        <p>
-                            Lớp An toàn thông tin – Khóa 50, nhập học vào ngày 9/9/2024, là một tập thể sinh viên trẻ
-                            trung, năng động và đầy nhiệt huyết. Ngay từ những ngày đầu bước vào giảng đường đại học,
-                            các thành viên trong lớp đã thể hiện tinh thần đoàn kết, trách nhiệm và đam mê công nghệ.
-                        </p>
-                        
-                        <p>
-                            Không chỉ tích cực trong học tập, lớp còn hăng hái tham gia các hoạt động tập thể, tạo nên
-                            một môi trường học tập vui vẻ, gắn bó và sáng tạo. Đây là nơi hội tụ của những bạn trẻ giàu
-                            khát vọng, sẵn sàng đồng hành cùng nhau trên hành trình chinh phục tri thức và làm chủ an
-                            toàn thông tin trong thời đại số.
-                        </p>
-                    </div>
-                    <div class="inner-button">
-                        <button  class="button-65" role="button"  target="_blank"> Learn
-                            more </button>
-                        </div>
-                    </div>
-                    <div class="inner-image">
-                        <img src="asset/image/sv8.png" alt="hinh anh">
-                        <img src="asset/image/sv9.jpg" alt="hinh anh">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End section four-five -->
 
     <!--section-six -->
     <div class="section-six" id="fb">
@@ -753,7 +637,9 @@
         </div>
     </div>
     <!-- End section-eight -->
-    <footer class="footer" id="ft">
+   
+    
+<footer class="footer" id="ft">
         <div class="container">
             <div class="inner-wrap">
                 <div class="inner-content">
