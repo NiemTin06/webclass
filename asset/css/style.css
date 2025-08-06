@@ -80,7 +80,7 @@
 .banner .inner-icons i{
     font-size: 20px;
 }
-.banner .inner-icons h2 {
+.banner .inner-icons .menu-btn {
     display: none;
 }
 }
@@ -699,7 +699,7 @@
 }
 .section-four .box-head .inner-title::after{
     content: "";
-    width: 200px;
+    width: 50%;
     height: 2px;
     position: absolute;
     bottom: -10px;
