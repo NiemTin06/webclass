@@ -223,6 +223,33 @@ ul{
   background-color: #fff;
   text-decoration: none;
 }
-
+@media (max-width: 768px) {
+  .sidebar{
+  right: -250px; /* Ẩn ra ngoài bên phải */
+  width: 250px;
+}
+  .sidebar ul a {
+    font-size: 17px;
+}
+}
+@media (max-width: 580px) {
+  .sidebar{
+  right: -200px; /* Ẩn ra ngoài bên phải */
+  width: 200px;
+}
+  .sidebar ul a {
+    font-size: 13px;
+}
+}
+@media (max-width: 400px) {
+  .sidebar{
+  right: -150px; /* Ẩn ra ngoài bên phải */
+  width: 150px;
+}
+  .sidebar ul a {
+    font-size: 10px;
+}
+}
 
 /* ////////////////////// */
+

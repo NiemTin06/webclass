@@ -11,15 +11,17 @@ let showSlide = () => {
 setInterval(showSlide, 5000);
 
 
-const toggleBtn = document.querySelector(".menu-btn");
+const toggleBtn = document.querySelectorAll(".menu-btn");
 const closeBtn = document.querySelector(".close-btn");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.querySelector(".overlay");
 
 // Mở sidebar khi bấm nút menu
-toggleBtn.addEventListener("click", () => {
-  sidebar.classList.add("active");
-  overlay.classList.add("show");
+toggleBtn.forEach((btn)=> {  
+  btn.addEventListener("click", () => {
+   sidebar.classList.add("active");
+   overlay.classList.add("show");
+}); 
 });
 
 // Đóng sidebar khi bấm nút X
@@ -128,12 +130,19 @@ image.forEach((el) => {
 // section 7
 
 let circle = document.querySelector(".section-seven .inner-wrap");
-
 let angle = 0;
 
+let limage  = document.querySelectorAll(".section-seven .inner-image");
+let idx = 0
 function rotate(direction){
+
   angle += direction * 90;
-  circle.style.transform = `rotate(${angle}deg)`;
+  circle.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+  idx = (idx + direction + limage.length) % limage.length;
+  limage.forEach((img, i) => {
+    if (4- i -1 === idx) img.classList.add("active");
+    else img.classList.remove("active");
+  });
 }
 
 let prev2 =document.querySelector("#prev2");
@@ -145,3 +154,5 @@ next2.addEventListener("click" ,()=>{
 prev2.addEventListener("click" ,()=>{
     rotate(-1);
 });
+
+
