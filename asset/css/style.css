@@ -323,8 +323,10 @@
 }
 
 .section-one .inner-content{
-    position: relative;
+    position: absolute;
     z-index: 12;
+    top: 20%;
+    left: 10%;
 }
 .section-one .inner-title{
     color: #fff;
@@ -364,21 +366,25 @@
         margin-bottom: 80px;
     }
     .section-one .inner-button .button {
-        padding: 20px;
-        font-size: 20px;
+        padding: 15px;
+        font-size: 15px;
+    }
+    .section-one{
+        height :40vh;
     }
 }
+
 @media (max-width: 480px) {
     .section-one .inner-title {
-        font-size: 35px;
+        font-size: 32px;
     }
     .section-one .inner-sub-title {
-        font-size: 25px;
+        font-size: 22px;
         margin-bottom: 80px;
     }
     .section-one .inner-button .button {
-        padding: 20px;
-        font-size: 20px;
+        padding: 10px;
+        font-size: 10px;
     }
 }
 
