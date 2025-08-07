@@ -16,8 +16,8 @@ function loadHTML(selector, file, callback) {
 }
 
 loadHTML(".Footer", "footer.html", 3);
-// loadHTML(".Header", "header.html", head);
-loadHTML(".banner", "banner.html", head);
+loadHTML(".Header", "header.html", head);
+loadHTML(".banner", "bannr.html", head);
 
 function head(){
   const toggleBtn = document.querySelectorAll(".menu-btn");
