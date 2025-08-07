@@ -15,8 +15,8 @@ function loadHTML(selector, file, callback) {
         .catch(err => console.error(err));
 }
 
-loadHTML(".Header", "header.html", head);
 loadHTML(".Banner", "banner.html", head);
+loadHTML(".Header", "header.html", head);
 loadHTML(".Footer", "footer.html", 3);
 
 function head(){
