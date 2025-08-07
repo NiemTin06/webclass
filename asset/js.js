@@ -1,27 +1,48 @@
-     
-const toggleBtn = document.querySelectorAll(".menu-btn");
-const closeBtn = document.querySelector(".close-btn");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.querySelector(".overlay");
 
-// Mở sidebar khi bấm nút menu
-toggleBtn.forEach((btn)=> {  
-  btn.addEventListener("click", () => {
-   sidebar.classList.add("active");
-   overlay.classList.add("show");
-}); 
-});
+function loadHTML(selector, file, callback) {
+    fetch(file)
+        .then(res => {
+            if (!res.ok) throw new Error(`Không tải được file: ${file}`);
+            return res.text();
+        })
+        .then(data => {
+           const header = document.querySelectorAll(selector)
+           header.forEach((hed)=>{
+              hed.innerHTML = data;
+           });
+           if (callback) callback();
+        })
+        .catch(err => console.error(err));
+}
 
-// Đóng sidebar khi bấm nút X
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.remove("active");
-  overlay.classList.remove("show");
-});
-overlay.addEventListener("click", () => {
-  sidebar.classList.remove("active");
-  overlay.classList.remove("show");
-});
+loadHTML(".Header", "header.html", head);
+loadHTML(".Banner", "banner.html", head);
+loadHTML(".Footer", "footer.html", 3);
 
+function head(){
+  const toggleBtn = document.querySelectorAll(".menu-btn");
+  const closeBtn = document.querySelector(".close-btn");
+  const sidebar = document.querySelector(".sidebar");
+  const overlay = document.querySelector(".overlay");
+  
+  // Mở sidebar khi bấm nút menu
+  toggleBtn.forEach((btn)=> {  
+    btn.addEventListener("click", () => {
+     sidebar.classList.add("active");
+     overlay.classList.add("show");
+  }); 
+  });
+  
+  // Đóng sidebar khi bấm nút X
+  closeBtn.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("show");
+  });
+  overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("show");
+  });
+}  
 
 // button
 var btn1  = document.querySelectorAll(".section-four .button-65");
@@ -184,12 +205,9 @@ prev2.addEventListener("click" ,()=>{
 
 
 // update 
-document.addEventListener("DOMContentLoaded", () => {
-  const update = document.querySelectorAll(".up");
-  update.forEach(up => {
-    up.addEventListener("click", () => {
-      alert("Đang update");
-    });
-  });
-});
+
 // end update 
+
+
+//---------------
+loadHTML("#Header", "header.html");

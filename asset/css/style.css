@@ -2,7 +2,6 @@
 /* banner */
 .banner{  
     background-color: var(--color-bg-1);
-  
     padding: 30px;
 }
 
@@ -164,12 +163,17 @@
 
 /* End banner */
 
-/* Header */
-.header{
-    background-color: var(--color-bg-2);
+.Header{
+    position: relative; 
+    overflow: visible;
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+/* Header */
+.header{
+    background-color: var(--color-bg-2);
 }
 .header .inner-list {
     margin-bottom: 0;
@@ -525,32 +529,7 @@
 }
 
 /* End New */
-/* About */
-.about .inner-wrap{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin: 100px 0;
-    gap : 30px;
-}
 
-.about .inner-wrap .inner-content{
-    grid-column-start: 1 ;
-    grid-column-end: 4 ;
-}
-.about .inner-wrap .inner-content .inner-desc{
-    font-size: 18px;
-    margin-bottom: 50px;
-}
-.about .inner-wrap .inner-image{
-    grid-column-start: 4 ;
-    grid-column-end: 6 ;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.about .inner-wrap .inner-image img{
-    width: 100%;
-    height: 100%;
-}
-/* End About */
 /* Section-two */
 .section-two {
     padding-top: 90px;
@@ -716,12 +695,127 @@
     border-radius: 50%;
 }
 /* End scroll-top */
+
+/* About us */
 .section-about{
     background-image: url(../image/white-background-with-blue-tech-hexagon/19366.jpg);
     background-size:cover ;
 
 }
 
+/* About */
+.about .inner-wrap{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 100px 0;
+    gap : 30px;
+}
+
+.about .inner-wrap .inner-content{
+    grid-column-start: 1 ;
+    grid-column-end: 4 ;
+}
+.about .inner-wrap .inner-content .inner-title{
+    font-size: 300%;
+}
+
+.about .inner-wrap .inner-content .inner-desc{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.about .inner-wrap .inner-image{
+    grid-column-start: 4 ;
+    grid-column-end: 6 ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.about .inner-wrap .inner-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.inner-wrap > .inner-button{
+    display: none;
+}
+/* End About */
+/* About us */
+
+/* Member  */
+.Members {
+    margin-bottom: 50px;
+}
+.Members .inner-title{
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.Members .inner-title::before{
+    background-color: black;
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    z-index: 1;
+}
+
+.Members .inner-wrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap :  10px 20px
+}
+.Members .inner-box{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    gap: 10px;
+    padding: 15px 10px;
+}
+.Members .inner-image {
+    width: 80px;
+    height: 80px;
+}
+.Members .inner-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* Member End */
+@media (max-width: 991px){
+    .about .inner-wrap{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "aa"
+        "bb"
+        ;
+    }
+    .about .inner-wrap .inner-content
+    {
+        grid-area: bb;
+    }
+    .about .inner-wrap .inner-image{
+        grid-area: aa;
+    }
+    .Members .inner-wrap{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 640px){    
+    .Members .inner-wrap{
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 542px){
+    .about .inner-wrap .inner-content .inner-title{
+        font-size: 250%;
+    }
+
+    .about .inner-wrap .inner-content .inner-desc{
+        font-size: 15px;
+    }
+}
 /* Section-four */
 .section-four{
     padding : 80px 0;
