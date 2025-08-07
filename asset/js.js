@@ -16,7 +16,7 @@ function loadHTML(selector, file, callback) {
 }
 
 loadHTML(".Footer", "footer.html", 3);
-loadHTML(".Header", "header.html", head);
+// loadHTML(".Header", "header.html", head);
 loadHTML(".banner", "banner.html", head);
 
 function head(){
