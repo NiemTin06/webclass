@@ -210,4 +210,17 @@ prev2.addEventListener("click" ,()=>{
 
 
 //---------------
-loadHTML("#Header", "header.html");
+  document.addEventListener("DOMContentLoaded", () => {
+    const upda = document.querySelectorAll(".up");
+    const tost = document.querySelector(".toast-box");
+
+    upda.forEach((up) => {
+      up.addEventListener("click", (e) => {
+        e.preventDefault();
+        tost.classList.add("show");
+        setTimeout(() => {
+          tost.classList.remove("show");
+        }, 2500);
+      });
+    });
+  });

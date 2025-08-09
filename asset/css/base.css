@@ -255,3 +255,22 @@ ul{
 
 /* ////////////////////// */
 
+.toast-box {
+  position: fixed;
+  top: 30px;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+.toast-box.show {
+  opacity: 1;
+
+}
