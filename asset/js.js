@@ -12,8 +12,15 @@ function loadHTML(selector, file, callback) {
            });
            if (callback) callback();
         })
+        .then( () =>{
+          
+        })
         .catch(err => console.error(err));
 }
+
+// Load header, footer, and banner
+
+
 
 loadHTML(".Footer", "footer.html", 3);
 loadHTML(".Header", "header.html", head);
@@ -42,6 +49,25 @@ function head(){
     sidebar.classList.remove("active");
     overlay.classList.remove("show");
   });
+   const upda = document.querySelectorAll(".up");
+    const tost = document.querySelector("#tost");
+
+    upda.forEach((up) => {
+        up.addEventListener("click", (e) => {
+          e.preventDefault();
+          tost.classList.add("show");
+
+          // Reset thanh tiến trình mỗi lần hiện
+          const progress = tost.querySelector(".toast-progress");
+          progress.style.animation = "none";
+          progress.offsetHeight; // trigger reflow
+          progress.style.animation = "";
+
+          setTimeout(() => {
+            tost.classList.remove("show");
+          }, 3000);
+        });
+    });
 }  
 
 // button
@@ -209,18 +235,7 @@ prev2.addEventListener("click" ,()=>{
 // end update 
 
 
-//---------------
-  document.addEventListener("DOMContentLoaded", () => {
-    const upda = document.querySelectorAll(".up");
-    const tost = document.querySelector(".toast-box");
-
-    upda.forEach((up) => {
-      up.addEventListener("click", (e) => {
-        e.preventDefault();
-        tost.classList.add("show");
-        setTimeout(() => {
-          tost.classList.remove("show");
-        }, 2500);
-      });
-    });
-  });
+//-----
+ 
+ 
+ 
